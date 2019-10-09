@@ -1,4 +1,4 @@
-/* To be overridden by theme user */
+/* To be overridden by theme user, scss variables are also accessible here */
 // @import "variables";
 
 :root {
@@ -184,12 +184,6 @@ aside nav ul li {
 		.sub-font {
 			font-size: .9em;
 			color: var(--soft_text_color);
-		}
-		.technical-title {
-			color: var(--main_text_color);
-			font-weight: 700;
-			font-family: var(--font_mono);
-			font-size: .9em;
 		}
 		p {
 			margin: .5em 0 var(--space);
