@@ -188,9 +188,6 @@ aside nav ul li {
 		p {
 			margin: .5em 0 var(--space);
 		}
-		img {
-			margin: 2em 0;
-		}
 		a {
 			color: var(--med_accent_text_color);
 			text-decoration: none;
@@ -254,4 +251,382 @@ aside nav ul li {
 
 .book-menu a:hover {
 	color: var(--dark_accent_text_color);
+}
+
+/* contributors */
+
+/*
+constants
+--------------------------------------------------------
+*/
+.bosun {
+  /* colors */
+  --text: #4d5b68;
+  --textDark: #2c2c2c;
+  --compliment: #606ee6;
+  --complimentLight: #848EE6;
+
+  /* dimensions */
+  --width: 42.903em;
+  --space: 2em;
+
+  /* type */
+  /* we'll set font-size in px so that computing em values is straightforward */
+  --alpha: 45px;
+  --beta: 36px;
+  --gamma: 31px;
+
+  --lead: 1.178;
+}
+
+/* reduce font-size as viewport narrows */
+@media all and (max-width: 980px) {
+  .bosun {
+    /* type */
+    --alpha: 36px;
+    --beta: 29px;
+    --gamma: 25px;
+  }
+}
+
+@media all and (max-width: 660px) {
+  .bosun {
+    /* type */
+    --alpha: 29px;
+    --beta: 23px;
+    --gamma: 20px;
+  }
+}
+
+/*
+base
+--------------------------------------------------------
+*/
+/* apply a natural box model to everything */
+#contributors *,
+#contributors *:before,
+#contributors *:after {
+  box-sizing: border-box;
+}
+
+/* base heading styles */
+#contributors h1,
+#contributors h2,
+#contributors h3,
+#contributors h4 {
+  font-weight: bold;
+  text-align: left;
+  line-height: var(--lead);
+  margin: 0;
+}
+
+
+/* TODO understand this syntax */
+#contributors :global(a):hover {
+  text-decoration: none;
+}
+
+/*
+bosun
+--------------------------------------------------------
+*/
+/* a 'boatswain' or 'bosun' is the person on a boat who maintains and fixes things */
+.bosun {
+  /* include horizontal padding in overall width */
+  max-width: calc(var(--width) + (var(--space) * 2));
+
+  /* we establish the base font-size for the component here, which will be equal to 1em from here on */
+  font-size: var(--gamma);
+  line-height: 1.161;
+  color: var(--text);
+
+  margin: 0 auto;
+}
+
+/*
+header
+----------------------------
+*/
+.bostun img {
+  margin: 0;
+}
+.bosun--header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bosun--mast {
+  /* ask this element to take up all the horizontal space that bosun--note isn't using */
+  flex: 2;
+
+  padding-right: var(--space);
+}
+
+#contributors h2,
+#contributors h3,
+.bosun--note {
+  font-size: var(--alpha);
+  font-weight: bold;
+}
+
+#contributors h2 {
+  color: var(--textDark);
+  margin-bottom: 0.756em;
+}
+
+#contributors h3 {
+  font-family: "Avenir next", "nunito-sans", sans-serif;
+  color: var(--compliment);
+  margin-bottom: 0.756em;
+}
+
+.bosun--note {
+  width: 7.822em;
+  font-weight: bold;
+  line-height: var(--lead);
+  color: #8f8f8f;
+}
+
+.bosun--note img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 3.022em;
+  /* excuse me hermie, mind scooting over just a bit? */
+  margin-left: -0.089em;
+}
+
+@media all and (max-width: 980px) {
+  .bosun--header {
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .bosun--mast {
+    padding-right: 0;
+  }
+
+  #contributors h2,
+  #contributors h3 {
+    text-align: center;
+  }
+
+  .bosun--note {
+    width: auto;
+    margin-bottom: 0.756em;
+  }
+}
+
+/*
+content
+----------------------------
+*/
+.bosun--content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+  margin-top: -1.548em;
+}
+
+.bosun--icon {
+  width: 7.097em;
+  margin: 2em 0;
+}
+
+.bosun--subhead {
+  font-size: var(--alpha);
+  font-weight: 900;
+  color: var(--compliment);
+}
+
+.bosun--detail {
+  font-size: var(--beta);
+  font-weight: 900;
+  line-height: 1.167;
+  color: var(--complimentLight);
+
+  margin: 0.75em 0;
+}
+
+@media all and (max-width: 1080px) {
+  .bosun--content {
+    margin-top: 0;
+  }
+}
+
+@media all and (max-width: 980px) {
+  .bosun--icon {
+    margin-bottom: 1.226em;
+  }
+}
+
+/*
+content aka the Talks section now
+----------------------------
+*/
+#proof-we-legit *,
+#proof-we-legit *:before,
+#proof-we-legit *:after {
+	box-sizing: border-box;
+}
+
+#proof-we-legit h2,
+#proof-we-legit h3,
+#proof-we-legit h4 {
+	line-height: 1.163;
+	margin: 0;
+}
+
+#proof-we-legit h2 {
+	font-size: var(--alpha);
+	font-weight: 900;
+	color: var(--textDark);
+	margin-bottom: 0.857em;
+}
+
+#proof-we-legit h3 {
+	font-family: "Avenir next", "nunito-sans", sans-serif;
+	font-weight: 900;
+	font-size: var(--beta);
+	color: var(--compliment);
+	margin-bottom: 0.933em;
+}
+
+#proof-we-legit p {
+	margin: 0;
+	font-size: 16px;
+	margin: .8em 0;
+}
+
+#proof-we-legit img {
+	display: block;
+	width: 100%;
+}
+
+#proof-we-legit a {
+	transition: opacity 0.2s ease;
+}
+
+#proof-we-legit a:hover {
+	opacity: 0.86;
+}
+
+/*
+bulletin
+--------------------------------------------------------
+*/
+.bulletin {
+	/* include horizontal padding in overall width */
+	max-width: calc(var(--width) + (var(--space) * 2));
+
+	/* we establish the base font-size for the component here, which will be equal to 1em from here on */
+	font-size: var(--delta);
+	line-height: 1.35;
+	color: var(--complimentDark);
+
+	padding: 0 var(--space) 4em;
+	margin: 0 auto;
+}
+
+/*
+header
+----------------------------
+*/
+.bulletin--header {
+	text-align: center;
+	padding-top: 6em;
+	margin-bottom: 5.8em;
+}
+
+.bulletin--header p {
+	font-family: "monaco", "source-code-pro", monospace;
+	font-size: var(--gamma);
+	color: var(--complimentDark);
+	text-align: center;
+}
+
+@media all and (max-width: 980px) {
+	.bulletin--header {
+		margin-bottom: 5em;
+	}
+}
+
+/*
+grid
+----------------------------
+*/
+.bulletin--grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+@supports (display: grid) {
+	.bulletin--grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-column-gap: 2.65em;
+		grid-row-gap: 1.5em;
+	}
+}
+
+.bulletin--item {
+	width: calc((100% / 3) - (2.65em / 2));
+	margin: 0;
+}
+
+	@supports (display: grid) {
+		.bulletin--item {
+			width: auto;
+		}
+	}
+
+.bulletin--item a {
+	display: block;
+}
+
+.bulletin--caption {
+	padding-top: 1.1em;
+}
+
+.bulletin--caption p {
+	font-family: "monaco", "source-code-pro", monospace;
+	font-size: var(--delta);
+	color: var(--complimentDark);
+	margin-bottom: 1.35em;
+}
+
+@media all and (max-width: 980px) {
+	.bulletin--item {
+		width: calc((100% / 2) - (2.65em / 2));
+	}
+
+	@supports (display: grid) {
+		.bulletin--grid {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.bulletin--item {
+			width: auto;
+		}
+	}
+}
+
+@media all and (max-width: 660px) {
+	@supports (display: grid) {
+		.bulletin--grid {
+			display: block;
+		}
+	}
+
+	.bulletin--item {
+		width: auto;
+	}
+
+	.bulletin--item + .bulletin--item {
+		padding-top: 1.5em;
+	}
 }
