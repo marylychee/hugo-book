@@ -505,6 +505,10 @@ content aka the Talks section now
 	display: block;
 	width: 100%;
 }
+#emoji {
+	display: inline;
+	width: auto;
+}
 
 #proof-we-legit a {
 	transition: opacity 0.2s ease;
@@ -629,4 +633,88 @@ grid
 	.bulletin--item + .bulletin--item {
 		padding-top: 1.5em;
 	}
+}
+
+/*
+youtube and vimeo lazy load styling
+*/
+
+.youtube {
+    margin-bottom: 30px;
+    position: relative;
+    padding-top: 56.23%;
+    overflow: hidden;
+		background-color: var(--bg_color_1);
+    cursor: pointer;
+}
+
+.youtube img {
+    width: 100%;
+    top: -16.84%;
+    left: 0;
+}
+
+.youtube .overlay {
+	position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+	opacity: 0.9;
+	background-color: #000;
+}
+
+.youtube:hover > .overlay {
+	opacity: .6;
+	background-color: #fff;
+	-moz-transition: opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+	-webkit-transition: opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+	transition: opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+}
+
+.youtube .play-button {
+    width: 80px;
+    height: 50px;
+		opacity: 0.7;
+		background-color: var(--main_text_color);
+    box-shadow: 0 0 30px rgba( 0,0,0,0.2 );
+    z-index: 1;
+    border-radius: 7px;
+}
+
+.youtube:hover > .play-button {
+		opacity: 0.99;
+		background-color: var(--light_accent_text_color);
+		-moz-transition: opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+		-webkit-transition: opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+		transition: opacity .25s cubic-bezier(0.0,0.0,0.2,1);
+}
+
+.youtube .play-button:before {
+    content: "";
+    border-style: solid;
+    border-width: 12px 0 12px 22px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.youtube img,
+.youtube .play-button {
+    cursor: pointer;
+}
+.youtube img,
+.youtube iframe,
+.youtube .play-button,
+.youtube .play-button:before {
+    position: absolute;
+}
+.youtube .play-button,
+.youtube .play-button:before {
+    top: 50%;
+    left: 50%;
+    transform: translate3d( -50%, -50%, 0 );
+}
+.youtube iframe {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
